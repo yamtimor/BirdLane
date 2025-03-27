@@ -9,4 +9,8 @@ class PipelineBuilder {
         println("Transforming...")
         block()
     }
+
+    fun load(target: String) {
+        println("Loadign into $target")
+    }
 }

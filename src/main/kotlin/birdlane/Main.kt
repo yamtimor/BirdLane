@@ -10,4 +10,6 @@ fun main() {
     builder.transform {
         println("This is a placeholder to transformation")
     }
+
+    builder.load("postgres://my-database")
 }
