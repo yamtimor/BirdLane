@@ -14,3 +14,9 @@ class PipelineBuilder {
         println("Loadign into $target")
     }
 }
+
+// DSL entry point
+fun pipeline(block: PipelineBuilder.() -> Unit) {
+    val builder = PipelineBuilder()
+    builder.block()
+}
