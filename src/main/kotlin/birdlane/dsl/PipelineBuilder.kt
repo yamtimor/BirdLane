@@ -9,5 +9,4 @@ class PipelineBuilder {
         println("Transforming...")
         block()
     }
-
 }
