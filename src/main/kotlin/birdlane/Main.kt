@@ -1,15 +1,16 @@
 package birdlane
 
 import birdlane.dsl.PipelineBuilder
+import birdlane.dsl.pipeline
 
 fun main() {
-    val builder = PipelineBuilder()
+    pipeline {
+        extract("users.csv")
 
-    builder.extract("data.csv")
+        transform {
+            println("Applying uppercase to names")
+        }
 
-    builder.transform {
-        println("This is a placeholder to transformation")
+        load("postgresql://my-database")
     }
-
-    builder.load("postgres://my-database")
 }
