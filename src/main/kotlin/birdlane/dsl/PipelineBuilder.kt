@@ -1,5 +1,7 @@
 package birdlane.dsl
 
+import  birdlane.engine.Executor
+
 class PipelineBuilder {
 
     private val steps = mutableListOf<Step>()
@@ -24,6 +26,9 @@ class PipelineBuilder {
     fun debugPrint() {
         println("Pipeline structure:")
         steps.forEach { println(it) }
+    }
+    fun execute() {
+        Executor(steps).execute()
     }
 }
 
