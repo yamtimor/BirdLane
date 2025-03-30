@@ -31,8 +31,9 @@ class PipelineBuilder {
 }
 
 // DSL entry point
-fun pipeline(block: PipelineBuilder.() -> Unit) {
-    val builder = PipelineBuilder()
-    builder.block()
-    builder.debugPrint()
+fun pipeline(block: PipelineBuilder.() -> Unit): PipelineBuilder {
+    return PipelineBuilder().apply {
+        this.block()
+        this.debugPrint()
+    }
 }
