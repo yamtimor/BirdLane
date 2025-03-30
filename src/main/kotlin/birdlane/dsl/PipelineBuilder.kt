@@ -13,8 +13,6 @@ class PipelineBuilder {
     }
 
     fun transform(block: () -> Unit) {
-        println("Transforming...")
-        block()
         steps.add(Step.Transform(block))
     }
 
