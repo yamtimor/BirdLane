@@ -19,7 +19,7 @@ class PipelineBuilder {
     }
 
     fun load(target: String) {
-        println("Loadign into $target")
+        println("Loading into $target")
         steps.add(Step.Load(target))
     }
 
