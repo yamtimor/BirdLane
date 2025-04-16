@@ -4,12 +4,18 @@ plugins {
     application
 }
 
+kotlin {
+    jvmToolchain(19)
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation("org.jetbrains.kotlin:kotlin-scripting-jsr223")
+    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host")
 }
 
 application {
