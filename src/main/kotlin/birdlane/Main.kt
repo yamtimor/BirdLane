@@ -1,16 +1,15 @@
 package birdlane
 
-import birdlane.dsl.PipelineBuilder
-import birdlane.dsl.pipeline
+import birdlane.engine.ScriptRunner
 
-fun main() {
-    pipeline {
-        extract("users.csv")
-
-        transform {
-            println("Applying uppercase to names")
-        }
-
-        load("postgresql://my-database")
+fun main(args: Array<String>) {
+    if (args.isEmpty()) {
+        println("Usage: birdlane <path-to-chart-file>")
+        return
     }
+
+    val chartFile = args[0]
+
+    println("Running chart: $chartFile")
+    ScriptRunner.runScript(chartFile)
 }

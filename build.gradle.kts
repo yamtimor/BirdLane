@@ -14,9 +14,15 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("org.jetbrains.kotlin:kotlin-scripting-jsr223")
-    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host")
+
+    // Scripting runtime + host
+    implementation("org.jetbrains.kotlin:kotlin-scripting-common:1.9.10")
+    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.10")
+    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.9.10")
+    implementation("org.jetbrains.kotlin:kotlin-scripting-jsr223:1.9.10")
 }
+
+
 
 application {
     mainClass.set("birdlane.MainKt")
