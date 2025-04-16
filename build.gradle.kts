@@ -20,6 +20,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.10")
     implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.9.10")
     implementation("org.jetbrains.kotlin:kotlin-scripting-jsr223:1.9.10")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+
 }
 
 

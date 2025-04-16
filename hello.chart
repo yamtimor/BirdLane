@@ -2,6 +2,8 @@ import birdlane.dsl.pipeline
 
 pipeline {
     extract("data.csv")
-    transform { println("cleaning...") }
+    transform {
+        println("cleaning...")
+    }
     load("postgres")
-}
+}.execute()

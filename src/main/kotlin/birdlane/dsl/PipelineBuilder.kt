@@ -7,7 +7,6 @@ class PipelineBuilder {
     private val steps = mutableListOf<Step>()
 
     fun extract(source: String) {
-        println("Extracting from $source")
         steps.add(Step.Extract(source))
 
     }
@@ -17,7 +16,6 @@ class PipelineBuilder {
     }
 
     fun load(target: String) {
-        println("Loading into $target")
         steps.add(Step.Load(target))
     }
 
