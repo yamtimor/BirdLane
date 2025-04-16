@@ -21,10 +21,6 @@ class PipelineBuilder {
         steps.add(Step.Load(target))
     }
 
-    fun debugPrint() {
-        println("Pipeline structure:")
-        steps.forEach { println(it) }
-    }
     fun execute() {
         Executor(steps).execute()
     }
