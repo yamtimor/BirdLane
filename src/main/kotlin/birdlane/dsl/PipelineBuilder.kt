@@ -6,17 +6,16 @@ class PipelineBuilder {
 
     private val steps = mutableListOf<Step>()
 
-    fun extract(source: String) {
-        steps.add(Step.Extract(source))
-
+    fun extract(name: String, block: () -> Any) {
+        steps.add(Step.Extract(name, block))
     }
 
-    fun transform(block: () -> Unit) {
-        steps.add(Step.Transform(block))
+    fun transform(name: String, block: (Any) -> Any) {
+        steps.add(Step.Transform(name, block))
     }
 
-    fun load(target: String) {
-        steps.add(Step.Load(target))
+    fun load(name: String, block: (Any) -> Unit) {
+        steps.add(Step.Load(name, block))
     }
 
     fun execute() {
