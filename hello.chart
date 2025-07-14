@@ -1,9 +1,20 @@
 import birdlane.dsl.pipeline
+import birdlane.utils.readCsv
 
 pipeline {
-    extract("data.csv")
-    transform {
-        println("cleaning...")
+    extract("Load CSV") {
+        readCsv("input.csv")
     }
-    load("postgres")
+
+    transform("Filter Adults") { data ->
+        (data as List<Map<String, String>>).filter {
+            it["age"]?.toIntOrNull() ?: 0 >= 18
+        }
+    }
+
+    load("Print Output") { data ->
+        (data as List<Map<String, String>>).forEach {
+            println(it)
+        }
+    }
 }.execute()
