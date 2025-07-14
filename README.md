@@ -6,12 +6,6 @@ BirdLane is not just another ETL tool. It’s a musical instrument for developer
 
 No YAML. No rigid DAGs. Just flow.
 
-Always show details
-
-Copy
-from pathlib import Path
-
-readme_section = """
 ## Why BirdLane
 
 BirdLane is built on a simple idea:  
