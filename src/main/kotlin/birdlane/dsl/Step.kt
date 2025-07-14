@@ -1,7 +1,7 @@
 package birdlane.dsl
 
 sealed class Step {
-    data class Extract(val source: String) : Step()
-    data class Transform(val block: () -> Unit) : Step()
-    data class Load(val target: String) : Step()
+    data class Extract(val name: String, val block: () -> Any) : Step()
+    data class Transform(val name: String, val block: (Any) -> Any) : Step()
+    data class Load(val name: String, val block: (Any) -> Unit) : Step()
 }
